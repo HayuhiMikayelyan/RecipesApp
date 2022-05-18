@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Recipes</string>
+    <string name="cook_easily">Cook Easily</string>
+    <string name="cook_easily_text">Cooking recipes step by step</string>
+    <string name="next">Next</string>
+    <string name="share_recipes">Share recipes</string>
+    <string name="share_recipes_text">Share your own recipes</string>
+    <string name="favorites">Favorites</string>
+    <string name="favorites_text">Save your favorite recipes</string>
+    <string name="lets_go">Let\'s go</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="recipes">Recipes</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="register">Already have an account? Log in</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="create_accaunt">Create Accaunt</string>
+    <string name="or">OR</string>
+    <string name="google_signup">Sign up with google</string>
+</resources>
