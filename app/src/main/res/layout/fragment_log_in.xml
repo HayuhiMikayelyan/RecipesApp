@@ -20,7 +20,7 @@
         android:id="@+id/img"
         android:layout_width="270dp"
         android:layout_height="270dp"
-        android:src="@drawable/login"
+        android:src="@drawable/ic_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:id="@+id/info_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/info_card"
+        android:background="@drawable/onboarding_info_card"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email_login"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_log_in"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -84,6 +84,7 @@
         android:gravity="center"
         android:textColor="@color/primary_green_light"
         android:textSize="20sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_password_login"/>

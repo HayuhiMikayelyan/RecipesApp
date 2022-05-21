@@ -7,9 +7,12 @@
         <entry key="..\:/Android/RecipesApp/app/src/main/res/font/varela_round.xml" value="0.23076923076923078" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/activity_main.xml" value="0.16621376811594202" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_log_in.xml" value="0.16621376811594202" />
-        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.1" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.16234247590808007" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding2.xml" value="0.1" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding3.xml" value="0.18" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.16621376811594202" />
-        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.22" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_view_pager.xml" value="0.16621376811594202" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13" />
       </map>
