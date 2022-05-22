@@ -16,7 +16,9 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="register">Already have an account? Log in</string>
     <string name="repeat_password">Repeat password</string>
-    <string name="create_accaunt">Create Accaunt</string>
+    <string name="create_account">Create Account</string>
     <string name="or">OR</string>
     <string name="google_signup">Sign up with google</string>
+    <string name="clientId">1053791992784-ivakecke5k6g50j1us28v2c6pvtgp6o1.apps.googleusercontent.com</string>
+    <string name="loading">Loading…</string>
 </resources>

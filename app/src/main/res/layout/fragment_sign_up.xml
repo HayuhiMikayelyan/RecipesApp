@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_accaunt"
+            android:text="@string/create_account"
             android:textColor="@color/primary_green_dark"
             android:textSize="32sp"
             app:layout_constraintBottom_toTopOf="@+id/img"
@@ -97,32 +97,32 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_password"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_create_accaunt"
+            android:id="@+id/btn_create_account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
             android:background="@color/primary_green_dark"
             android:paddingVertical="8dp"
-            android:text="@string/create_accaunt"
+            android:text="@string/create_account"
             android:textAllCaps="false"
             android:gravity="center"
-            android:textColor="@color/primary_green_light"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edt_repeat_password"/>
 
         <TextView
-            android:id="@+id/tv_forget_password"
+            android:id="@+id/tv_log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/register"
-            android:textColor="@color/primary_green_light"
+            android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/btn_create_accaunt"
-            app:layout_constraintTop_toBottomOf="@+id/btn_create_accaunt" />
+            app:layout_constraintStart_toStartOf="@id/btn_create_account"
+            app:layout_constraintTop_toBottomOf="@+id/btn_create_account" />
 
         <TextView
             android:id="@+id/textView"
@@ -131,9 +131,9 @@
             android:layout_marginTop="12dp"
             android:text="@string/or"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/btn_create_accaunt"
-            app:layout_constraintStart_toStartOf="@id/btn_create_accaunt"
-            app:layout_constraintTop_toBottomOf="@id/tv_forget_password" />
+            app:layout_constraintEnd_toEndOf="@id/btn_create_account"
+            app:layout_constraintStart_toStartOf="@id/btn_create_account"
+            app:layout_constraintTop_toBottomOf="@id/tv_log_in" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -142,14 +142,14 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:text="@string/google_signup"
-            android:textColor="@color/primary_green_dark"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:gravity="center"
             android:textAllCaps="false"
             android:layout_marginTop="12dp"
             android:drawableStart="@drawable/ic_google"
-            app:layout_constraintEnd_toEndOf="@+id/btn_create_accaunt"
-            app:layout_constraintStart_toStartOf="@+id/btn_create_accaunt"
+            app:layout_constraintEnd_toEndOf="@+id/btn_create_account"
+            app:layout_constraintStart_toStartOf="@+id/btn_create_account"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

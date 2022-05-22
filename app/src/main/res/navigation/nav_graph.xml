@@ -30,7 +30,11 @@
         android:id="@+id/logInFragment"
         android:name="com.example.recipesapp.ui.fragment.signup_login.LogInFragment"
         android:label="LogInFragment"
-        tools:layout="@layout/fragment_log_in"/>
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.recipesapp.ui.fragment.signup_login.SignUpFragment"
@@ -39,5 +43,13 @@
         <action
             android:id="@+id/action_signInFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.recipesapp.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

@@ -82,7 +82,7 @@
         android:paddingVertical="8dp"
         android:text="@string/log_in"
         android:gravity="center"
-        android:textColor="@color/primary_green_light"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,12 +90,12 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_password_login"/>
 
     <TextView
-        android:id="@+id/tv_forget_password"
+        android:id="@+id/tv_log_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/forgot_password"
-        android:textColor="@color/primary_green_light"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/btn_log_in"
         app:layout_constraintTop_toBottomOf="@+id/btn_log_in" />
