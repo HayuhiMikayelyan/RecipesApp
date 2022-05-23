@@ -46,10 +46,6 @@ class SignUpFragment : Fragment() {
             }
         }
 
-        binding.btnSignupGoogle.setOnClickListener {
-
-        }
-
         binding.tvLogIn.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_logInFragment)
         }

@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_logInFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -52,4 +55,13 @@
         android:name="com.example.recipesapp.ui.fragment.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.recipesapp.ui.fragment.signup_login.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
 </navigation>

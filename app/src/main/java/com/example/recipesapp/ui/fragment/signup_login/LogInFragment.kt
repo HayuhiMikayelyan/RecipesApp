@@ -32,10 +32,12 @@ class LogInFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.btnLogIn.setOnClickListener {
-
             validateData()
         }
 
+        binding.resetPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_resetPasswordFragment)
+        }
 
         return binding.root
     }
