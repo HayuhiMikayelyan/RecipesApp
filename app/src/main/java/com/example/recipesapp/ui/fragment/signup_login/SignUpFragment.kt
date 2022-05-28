@@ -2,6 +2,7 @@ package com.example.recipesapp.ui.fragment.signup_login
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -13,8 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentSignUpBinding
+import com.example.recipesapp.ui.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
-
 
 
 class SignUpFragment : Fragment() {
@@ -38,7 +39,8 @@ class SignUpFragment : Fragment() {
                     .addOnCompleteListener({
                         dialog.hide()
                         if (it.isSuccessful){
-                            findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
+                            val intent = Intent (getActivity(), MainActivity::class.java)
+                            getActivity()?.startActivity(intent)
                         }else{
                             Toast.makeText(activity,it.exception!!.message,Toast.LENGTH_SHORT).show()
                         }

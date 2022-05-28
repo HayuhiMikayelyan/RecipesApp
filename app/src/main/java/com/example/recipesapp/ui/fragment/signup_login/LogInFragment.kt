@@ -2,6 +2,7 @@ package com.example.recipesapp.ui.fragment.signup_login
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -15,7 +16,9 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentLogInBinding
+import com.example.recipesapp.ui.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers.Main
 
 class LogInFragment : Fragment() {
 
@@ -61,7 +64,8 @@ class LogInFragment : Fragment() {
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 dialog.hide()
-                findNavController().navigate(R.id.action_logInFragment_to_homeFragment)
+                val intent = Intent (getActivity(), MainActivity::class.java)
+                getActivity()?.startActivity(intent)
             }
             .addOnFailureListener{
                 dialog.hide()

@@ -41,7 +41,6 @@ class ResetPasswordFragment : Fragment() {
                 val dialog = progressDialog(requireActivity())
                 dialog.show()
                 firebaseAuth.sendPasswordResetEmail(email)
-
                     .addOnCompleteListener {
                         dialog.hide()
                         if (it.isSuccessful){
