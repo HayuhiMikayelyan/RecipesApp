@@ -13,12 +13,9 @@ import kotlinx.coroutines.NonDisposableHandle.parent
 class RecAdapter(private val list: List<FoodModel>):
     RecyclerView.Adapter<RecAdapter.RecViewHolder>(){
 
-        class RecViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-            val name = itemView.findViewById<TextView>(R.id.tv_food_name)
-            val recipe = itemView.findViewById<TextView>(R.id.tv_food_recipe)
-            val image = itemView.findViewById<ImageView>(R.id.img_food)
+    var onItemClick:((FoodModel) -> Unit)? = null
 
-        }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rec_item,parent,false)
@@ -31,9 +28,18 @@ class RecAdapter(private val list: List<FoodModel>):
         Picasso.with(holder.itemView.context)
             .load(list[position].imgUrl)
             .into(holder.image)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(list[position])
+        }
     }
 
-    override fun getItemCount(): Int {
-        return list.size
+    override fun getItemCount(): Int = list.size
+
+    class RecViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+        val name = itemView.findViewById<TextView>(R.id.tv_food_name)
+        val recipe = itemView.findViewById<TextView>(R.id.tv_food_recipe)
+        val image = itemView.findViewById<ImageView>(R.id.img_food)
+
     }
 }

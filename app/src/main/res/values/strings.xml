@@ -25,4 +25,6 @@
     <string name="reset_email">Enter your email</string>
     <string name="profile">Profile</string>
     <string name="home">Home</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="method">Method</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.recipesapp.ui.fragment.home
+package com.example.recipesapp.ui.fragment.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.recipesapp.R
 
-class FavoritesFragment : Fragment() {
 
-
+class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
 

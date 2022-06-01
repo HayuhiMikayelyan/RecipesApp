@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.home.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_green_light"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_green_dark"
+            android:textSize="32sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text=" Fresh mint tea"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_detail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_title"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_ingredients_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredients"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/primary_green_dark"
+            app:layout_constraintTop_toBottomOf="@id/img_detail"/>
+
+        <TextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="handful of fresh mint (around ½ a pack)\nhoney to taste"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/primary_green_dark"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients_text"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_method_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/method"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/primary_green_dark"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/primary_green_dark"
+            app:layout_constraintTop_toBottomOf="@id/tv_method_text"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Take a few leaves of the mint in one hand and sharply clap your other hand on top, then drop the leaves into a teapot or cafetiere. Repeat with the rest of the mint, saving a few small sprigs for each glass as a garnish.\n\nFill up the pot with boiling water and let it infuse for 2-3 mins or until the liquid starts to take on a slight pale yellow/green hue. Strain the tea into cups or heatproof glasses and sweeten with honey to taste. Drop the reserved mint into the cups to decorate if you like."
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
