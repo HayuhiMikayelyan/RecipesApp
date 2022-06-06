@@ -15,34 +15,44 @@ import androidx.navigation.fragment.findNavController
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentSignUpBinding
 import com.example.recipesapp.ui.activity.MainActivity
+import com.example.recipesapp.ui.fragment.home.UserModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import java.lang.Exception
 
 
 class SignUpFragment : Fragment() {
-    private lateinit var binding:FragmentSignUpBinding
+    private lateinit var binding: FragmentSignUpBinding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSignUpBinding.inflate(inflater,container,false)
+        binding = FragmentSignUpBinding.inflate(inflater, container, false)
 
         binding.btnCreateAccount.setOnClickListener {
 
-            if (check()){
+            if (check()) {
+                val username = binding.edtUsername.text.toString().trim()
                 val email = binding.edtEmail.text.toString().trim()
                 val password = binding.edtPassword.text.toString().trim()
                 val dialog = progressDialog(requireActivity())
                 dialog.show()
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener({
                         dialog.hide()
-                        if (it.isSuccessful){
-                            val intent = Intent (getActivity(), MainActivity::class.java)
+                        if (it.isSuccessful) {
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                .child(email.replace(".", ""))
+                                .setValue(UserModel(email,password,username))
+
+                            val intent = Intent(getActivity(), MainActivity::class.java)
                             getActivity()?.startActivity(intent)
-                        }else{
-                            Toast.makeText(activity,it.exception!!.message,Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(activity, it.exception!!.message, Toast.LENGTH_SHORT)
+                                .show()
                         }
                     })
             }
@@ -56,23 +66,25 @@ class SignUpFragment : Fragment() {
     }
 
 
-
     private fun check(): Boolean {
         var rightPassword = true
 
-        if (binding.edtEmail.text.toString().trim() == ""){
-            Toast.makeText(activity,"Please enter email",Toast.LENGTH_SHORT).show()
-            rightPassword=false
-        }
-        else if (binding.edtPassword.text.toString().trim() == ""){
-            Toast.makeText(activity,"Please enter password",Toast.LENGTH_SHORT).show()
-            rightPassword=false
-        }
-        else if(binding.edtRepeatPassword.text.toString().trim() != binding.edtPassword.text.toString().trim()){
+        if (binding.edtUsername.text.toString().trim() == "") {
+            Toast.makeText(activity, "Please enter username", Toast.LENGTH_SHORT).show()
+            rightPassword = false
+        } else if (binding.edtEmail.text.toString().trim() == "") {
+            Toast.makeText(activity, "Please enter email", Toast.LENGTH_SHORT).show()
+            rightPassword = false
+        } else if (binding.edtPassword.text.toString().trim() == "") {
+            Toast.makeText(activity, "Please enter password", Toast.LENGTH_SHORT).show()
+            rightPassword = false
+        } else if (binding.edtRepeatPassword.text.toString()
+                .trim() != binding.edtPassword.text.toString().trim()
+        ) {
             binding.edtPassword.text = null
             binding.edtRepeatPassword.text = null
-            rightPassword=false
-            Toast.makeText(activity,"Passwords don't match",Toast.LENGTH_SHORT).show()
+            rightPassword = false
+            Toast.makeText(activity, "Passwords don't match", Toast.LENGTH_SHORT).show()
         }
 
         return rightPassword

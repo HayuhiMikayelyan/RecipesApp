@@ -4,15 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.favorites.FavoritesFragment"
-    android:background="@color/primary_green">
+    android:background="@color/primary_green_light">
 
-
-    <TextView
-        android:id="@+id/textView"
+    <ProgressBar
+        android:id="@+id/fav_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/favorites"
-        android:textSize="40sp"
-        android:textColor="@color/white"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/primary_green_dark"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_fav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

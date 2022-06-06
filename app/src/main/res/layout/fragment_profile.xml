@@ -1,18 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.profile.ProfileFragment"
-    android:background="@color/primary_green">
+    android:background="@color/primary_green_light"
+    android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="42sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
         android:text="@string/profile"
-        android:textSize="40sp"
-        android:textColor="@color/white"
-        android:layout_gravity="center"/>
-</FrameLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        android:text="@string/username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        tools:text="Anna"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        tools:text="anna@mail.ru"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_username_text"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        android:text="@string/password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_email"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_green_dark"
+        android:textStyle="bold"
+        tools:text="123456"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_email"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

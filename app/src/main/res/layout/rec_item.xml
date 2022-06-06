@@ -34,6 +34,16 @@
             app:layout_constraintTop_toTopOf="@+id/img_food"
             tools:text="Tea with honey" />
 
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_favorites"
+            app:layout_constraintTop_toTopOf="@id/img_food"
+            app:layout_constraintStart_toStartOf="@id/img_food"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="6dp"/>
+
         <TextView
             android:id="@+id/tv_food_recipe"
             android:layout_width="0dp"
