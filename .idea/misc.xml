@@ -27,6 +27,12 @@
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/rec_item.xml" value="0.25" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/activity_start.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_detail.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_favorites.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

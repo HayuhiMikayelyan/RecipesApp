@@ -1,13 +1,14 @@
 package com.example.recipesapp.ui.fragment.profile
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.recipesapp.R
+import androidx.fragment.app.Fragment
 import com.example.recipesapp.databinding.FragmentProfileBinding
+import com.example.recipesapp.ui.activity.StartActivity
 import com.example.recipesapp.ui.fragment.home.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -32,9 +33,9 @@ class ProfileFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                     try {
                         val user = snapshot.getValue(UserModel::class.java)!!
-                        binding.tvUsername.text = user.username
-                        binding.tvEmail.text = user.email
-                        binding.tvPassword.text = user.password
+                        binding.tvUsernameText.text = user.username
+                        binding.tvEmailText.text = user.email
+                        binding.tvPasswordText.text = user.password
                     }catch (e:Exception){
                         Toast.makeText(activity,e.message,Toast.LENGTH_LONG).show()
                     }
@@ -49,5 +50,13 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnLogout.setOnClickListener {
+            val firebaseAuth = FirebaseAuth.getInstance()
+            firebaseAuth.signOut()
+            startActivity(Intent(requireActivity(),StartActivity::class.java))
+        }
+    }
 
 }
