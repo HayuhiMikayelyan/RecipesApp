@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.recipesapp.databinding.FragmentProfileBinding
 import com.example.recipesapp.ui.activity.StartActivity
-import com.example.recipesapp.ui.fragment.home.UserModel
+import com.example.recipesapp.ui.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

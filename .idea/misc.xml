@@ -10,9 +10,11 @@
         <entry key="..\:/Android/RecipesApp/app/src/main/res/font/varela_round.xml" value="0.23076923076923078" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/activity_main.xml" value="0.16621376811594202" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/activity_start.xml" value="0.16259057971014493" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/category_rec_item.xml" value="0.25" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_category.xml" value="0.16621376811594202" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_favorites.xml" value="0.18" />
-        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_home.xml" value="0.16621376811594202" />
+        <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_log_in.xml" value="0.16621376811594202" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.25" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/fragment_on_boarding2.xml" value="0.1" />
@@ -27,12 +29,6 @@
         <entry key="..\:/Android/RecipesApp/app/src/main/res/layout/rec_item.xml" value="0.25" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/RecipesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/activity_start.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_detail.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_favorites.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/vemir/AndroidStudioProjects/Intern/RecipesApp/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

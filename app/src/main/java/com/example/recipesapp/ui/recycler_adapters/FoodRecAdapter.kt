@@ -1,7 +1,5 @@
-package com.example.recipesapp.ui.fragment.home
+package com.example.recipesapp.ui.recycler_adapters
 
-import android.provider.ContactsContract
-import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +8,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipesapp.R
+import com.example.recipesapp.ui.models.FoodModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.NonDisposableHandle.parent
-import java.lang.reflect.Array
 
-class RecAdapter(private val list: List<FoodModel>) :
-    RecyclerView.Adapter<RecAdapter.RecViewHolder>() {
+class FoodRecAdapter(private val list: List<FoodModel>) :
+    RecyclerView.Adapter<FoodRecAdapter.RecViewHolder>() {
 
     val favList = mutableListOf<String>()
     var onItemClick: ((FoodModel) -> Unit)? = null

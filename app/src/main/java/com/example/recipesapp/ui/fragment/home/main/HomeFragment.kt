@@ -1,5 +1,6 @@
-package com.example.recipesapp.ui.fragment.home
+package com.example.recipesapp.ui.fragment.home.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +8,13 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentHomeBinding
+import com.example.recipesapp.ui.models.CategoriesModel
+import com.example.recipesapp.ui.models.FoodModel
+import com.example.recipesapp.ui.recycler_adapters.FoodRecAdapter
 import com.google.firebase.database.*
-import java.lang.Exception
 
 
 class HomeFragment : Fragment() {
@@ -30,15 +31,18 @@ class HomeFragment : Fragment() {
         binding.rec.layoutManager = LinearLayoutManager(activity)
         foodList = mutableListOf()
 
-        getFoodList()
+        val category = arguments?.getParcelable<CategoriesModel>("Category")!!
+        binding.fragHome.setBackgroundColor(Color.parseColor(category.background.toString()))
+        binding.tvCategoryName.text = category.name
+        getFoodList(category.name!!)
 
         return binding.root
     }
 
 
-    private fun getFoodList() {
+    private fun getFoodList(path:String) {
 
-        database = FirebaseDatabase.getInstance().getReference("Drinks")
+        database = FirebaseDatabase.getInstance().getReference(path)
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -47,7 +51,7 @@ class HomeFragment : Fragment() {
                         val food = foodSnapshot.getValue(FoodModel::class.java)
                         foodList.add(food!!)
                     }
-                    val adapter = RecAdapter(foodList)
+                    val adapter = FoodRecAdapter(foodList)
                     binding.rec.adapter = adapter
                     binding.progress.visibility = ProgressBar.GONE
                     adapter.onItemClick = {

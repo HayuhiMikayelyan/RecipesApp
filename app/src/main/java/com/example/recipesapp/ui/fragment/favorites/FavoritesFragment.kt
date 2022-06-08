@@ -11,14 +11,14 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentFavoritesBinding
-import com.example.recipesapp.ui.fragment.home.DetailFragment
-import com.example.recipesapp.ui.fragment.home.FoodModel
-import com.example.recipesapp.ui.fragment.home.RecAdapter
+import com.example.recipesapp.ui.fragment.home.main.DetailFragment
+import com.example.recipesapp.ui.models.FoodModel
+import com.example.recipesapp.ui.recycler_adapters.FoodRecAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class FavoritesFragment : Fragment() {
-private lateinit var adapter: RecAdapter
+private lateinit var adapter: FoodRecAdapter
     private lateinit var binding: FragmentFavoritesBinding
     private lateinit var database: DatabaseReference
     private lateinit var foodList: MutableList<FoodModel>
@@ -42,7 +42,7 @@ private lateinit var adapter: RecAdapter
 
     private fun getFoodList() {
         binding.favProgress.visibility = ProgressBar.VISIBLE
-        adapter = RecAdapter(foodList)
+        adapter = FoodRecAdapter(foodList)
         binding.recFav.adapter = adapter
         database = FirebaseDatabase.getInstance().getReference("Drinks")
         val favourites = FirebaseDatabase.getInstance().getReference("Users")

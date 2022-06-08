@@ -1,4 +1,4 @@
-package com.example.recipesapp.ui.fragment.home
+package com.example.recipesapp.ui.models
 
 import android.os.Parcel
 import android.os.Parcelable

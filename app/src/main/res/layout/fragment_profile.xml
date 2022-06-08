@@ -6,14 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.profile.ProfileFragment"
     android:background="@color/primary_green_light"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp">
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_logout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="16dp"
         android:background="@color/primary_green_dark"
         android:gravity="center"

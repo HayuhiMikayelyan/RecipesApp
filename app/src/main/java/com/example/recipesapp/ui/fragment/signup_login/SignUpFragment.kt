@@ -15,10 +15,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentSignUpBinding
 import com.example.recipesapp.ui.activity.MainActivity
-import com.example.recipesapp.ui.fragment.home.UserModel
+import com.example.recipesapp.ui.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import java.lang.Exception
 
 
 class SignUpFragment : Fragment() {

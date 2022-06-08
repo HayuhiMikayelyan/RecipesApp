@@ -1,13 +1,12 @@
-package com.example.recipesapp.ui.fragment.home
+package com.example.recipesapp.ui.fragment.home.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentDetailBinding
+import com.example.recipesapp.ui.models.FoodModel
 import com.squareup.picasso.Picasso
 
 

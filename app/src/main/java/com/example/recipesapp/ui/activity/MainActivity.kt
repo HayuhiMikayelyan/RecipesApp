@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.ActivityMainBinding
 import com.example.recipesapp.ui.fragment.favorites.FavoritesFragment
-import com.example.recipesapp.ui.fragment.home.HomeFragment
+import com.example.recipesapp.ui.fragment.home.categories.CategoryFragment
 import com.example.recipesapp.ui.fragment.profile.ProfileFragment
 
  class MainActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ import com.example.recipesapp.ui.fragment.profile.ProfileFragment
          setContentView(binding.root)
 
          setupClickListener()
-         loadFragment(HomeFragment())
+         loadFragment(CategoryFragment())
      }
 
      private fun setupClickListener() {
@@ -34,7 +34,7 @@ import com.example.recipesapp.ui.fragment.profile.ProfileFragment
                      ProfileFragment()
                  }
                  else -> {
-                     HomeFragment()
+                     CategoryFragment()
                  }
              }
              loadFragment(fragment)
