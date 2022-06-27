@@ -28,11 +28,11 @@ class FoodRecAdapter(private val list: List<FoodModel>) :
     }
 
     override fun onBindViewHolder(holder: RecViewHolder, position: Int) {
-        val favourites = FirebaseDatabase.getInstance().getReference("Users")
+        val favorites = FirebaseDatabase.getInstance().getReference("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.email.toString().replace(".", ""))
             .child("favoriteList")
 
-        favourites.addValueEventListener(object : ValueEventListener {
+        favorites.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (snap in snapshot.children) {
                     if(!(snap.getValue(String::class.java)!! in favList)){
@@ -74,11 +74,11 @@ class FoodRecAdapter(private val list: List<FoodModel>) :
             if (!exists){
                 holder.favorite.setImageResource(R.drawable.ic_favorites_2)
                 favList.add(holder.name.text.toString())
-                favourites.setValue(favList)
+                favorites.setValue(favList)
             }else{
                 holder.favorite.setImageResource(R.drawable.ic_favorites)
                 favList.remove(holder.name.text.toString())
-                favourites.setValue(favList)
+                favorites.setValue(favList)
 
             }
 

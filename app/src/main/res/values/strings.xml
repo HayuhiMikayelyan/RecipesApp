@@ -28,4 +28,10 @@
     <string name="ingredients">Ingredients</string>
     <string name="method">Method</string>
     <string name="username">Username</string>
+    <string name="search_by_name">Search by name...</string>
+    <string name="search_by_ing">Search by ingredient...</string>
+    <string-array name="spinner">
+        <item>Name</item>
+        <item>Ingredient</item>
+    </string-array>
 </resources>

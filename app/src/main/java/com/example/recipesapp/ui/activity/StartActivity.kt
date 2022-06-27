@@ -7,7 +7,7 @@ import com.example.recipesapp.R
 import com.google.firebase.auth.FirebaseAuth
 
 class StartActivity : AppCompatActivity() {
-    lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)

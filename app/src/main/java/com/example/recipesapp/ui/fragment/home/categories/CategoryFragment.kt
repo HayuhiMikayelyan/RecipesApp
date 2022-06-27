@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentCategoryBinding
 import com.example.recipesapp.ui.fragment.home.main.DetailFragment
 import com.example.recipesapp.ui.fragment.home.main.HomeFragment
 import com.example.recipesapp.ui.models.CategoriesModel
+import com.example.recipesapp.ui.models.FoodModel
 import com.example.recipesapp.ui.recycler_adapters.CategoriesRecAdapter
 import com.google.firebase.database.*
 
@@ -37,6 +39,9 @@ class CategoryFragment : Fragment() {
 
     private fun getCategories() {
 
+        val adapter = CategoriesRecAdapter(categoryList)
+        binding.categoryRec.adapter = adapter
+
         database = FirebaseDatabase.getInstance().getReference("Categories")
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -45,9 +50,8 @@ class CategoryFragment : Fragment() {
                     for (categorySnapshot in snapshot.children) {
                         val category = categorySnapshot.getValue(CategoriesModel::class.java)
                         categoryList.add(category!!)
+                        adapter.notifyDataSetChanged()
                     }
-                    val adapter = CategoriesRecAdapter(categoryList)
-                    binding.categoryRec.adapter = adapter
                     binding.progress.visibility = ProgressBar.GONE
 
                     adapter.onItemClick = {
@@ -58,11 +62,12 @@ class CategoryFragment : Fragment() {
 
                         fragment.arguments = bundle
 
-                        fragmentManager!!.beginTransaction()
+                        fragmentManager!! .beginTransaction()
                             .replace(R.id.container, fragment)
                             .addToBackStack(null)
                             .commit()
                     }
+
                 }
 
             }
@@ -74,5 +79,6 @@ class CategoryFragment : Fragment() {
 
         })
     }
+
 
 }

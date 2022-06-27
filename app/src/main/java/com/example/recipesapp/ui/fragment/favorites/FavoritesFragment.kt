@@ -97,7 +97,7 @@ private lateinit var adapter: FoodRecAdapter
                     bundle.putParcelable("Food", it)
                     fragment.arguments = bundle
 
-                    fragmentManager!!.beginTransaction()
+                    requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit()
@@ -108,52 +108,6 @@ private lateinit var adapter: FoodRecAdapter
             }
 
         })
-
-   /*     database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-
-                for (foodSnapshot in snapshot.children) {
-
-                        favourites.addValueEventListener(object : ValueEventListener {
-                            @SuppressLint("NotifyDataSetChanged")
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                for (snap in snapshot.children) {
-                                    val food = foodSnapshot.getValue(FoodModel::class.java)
-                                    if(snap.getValue(String::class.java)!!.toString() == food!!.name.toString()){
-
-                                        foodList.add(food)
-                                        adapter.notifyDataSetChanged()
-                                    }
-                                }
-                            }override fun onCancelled(error: DatabaseError) {
-                                Toast.makeText(activity, error.message, Toast.LENGTH_LONG).show()
-                            }
-
-                        })
-                    }
-
-
-                    binding.favProgress.visibility = ProgressBar.GONE
-                    adapter.onItemClick = {
-
-                        val bundle = Bundle()
-                        val fragment = DetailFragment()
-
-                        bundle.putParcelable("Food", it)
-                        fragment.arguments = bundle
-
-                        fragmentManager!!.beginTransaction()
-                            .replace(R.id.container, fragment)
-                            .addToBackStack(null)
-                            .commit()
-                    }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(activity, error.message, Toast.LENGTH_LONG).show()
-            }
-
-        })*/
     }
 
 }

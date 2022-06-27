@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.home.main.HomeFragment"
-    android:id="@+id/frag_home">
+    android:id="@+id/frag_home"
+    android:background="@color/primary_green_light">
 
 
     <TextView
@@ -20,6 +21,49 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Drinks" />
 
+    <View
+        android:id="@+id/search_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edt_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="@id/edt_search"
+        app:layout_constraintBottom_toBottomOf="@id/edt_search"/>
+
+
+    <EditText
+        android:id="@+id/edt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/spinner"
+        app:layout_constraintEnd_toStartOf="@id/img_search"
+        app:layout_constraintTop_toBottomOf="@id/tv_category_name"
+        android:padding="8dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/search_by_name"
+        android:inputType="text"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/search_background"
+        app:layout_constraintTop_toTopOf="@id/edt_search"
+        app:layout_constraintBottom_toBottomOf="@id/edt_search"/>
+
+    <ImageView
+        android:id="@+id/img_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        app:layout_constraintTop_toTopOf="@id/search_background"
+        app:layout_constraintBottom_toBottomOf="@id/search_background"
+        app:layout_constraintEnd_toEndOf="@id/search_background"
+        android:layout_marginEnd="8dp"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec"
         android:layout_width="0dp"
@@ -28,7 +72,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_category_name"/>
+        tools:listitem="@layout/rec_item"
+        app:layout_constraintTop_toBottomOf="@id/edt_search"/>
 
     <ProgressBar
         android:id="@+id/progress"
