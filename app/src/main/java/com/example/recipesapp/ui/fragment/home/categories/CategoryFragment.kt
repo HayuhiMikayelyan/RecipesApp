@@ -62,7 +62,7 @@ class CategoryFragment : Fragment() {
 
                         fragment.arguments = bundle
 
-                        fragmentManager!! .beginTransaction()
+                        requireActivity().supportFragmentManager.beginTransaction()
                             .replace(R.id.container, fragment)
                             .addToBackStack(null)
                             .commit()

@@ -1,14 +1,13 @@
 package com.example.recipesapp.ui.fragment.profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentProfileBinding
-import com.example.recipesapp.ui.activity.StartActivity
 import com.example.recipesapp.ui.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -25,38 +24,29 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentProfileBinding.inflate(inflater,container,false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
         val user = FirebaseDatabase.getInstance().getReference("Users")
-            .child(FirebaseAuth.getInstance().currentUser!!.email.toString().replace(".", ""))
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
 
-        user.addValueEventListener(object : ValueEventListener{
+        user.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                    try {
-                        val user = snapshot.getValue(UserModel::class.java)!!
-                        binding.tvUsernameText.text = user.username
-                        binding.tvEmailText.text = user.email
-                        binding.tvPasswordText.text = user.password
-                    }catch (e:Exception){
-                        Toast.makeText(activity,e.message,Toast.LENGTH_LONG).show()
-                    }
+                val user = snapshot.getValue(UserModel::class.java)!!
+                binding.tvProfileName.text = user.username
+                binding.tvProfileEmail.text = user.email
             }
-
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(activity,error.message,Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, error.message, Toast.LENGTH_LONG).show()
             }
 
         })
+        binding.imgSettings.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, ProfileEditFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.btnLogout.setOnClickListener {
-            val firebaseAuth = FirebaseAuth.getInstance()
-            firebaseAuth.signOut()
-            startActivity(Intent(requireActivity(),StartActivity::class.java))
-        }
     }
 
 }

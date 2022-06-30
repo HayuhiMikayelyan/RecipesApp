@@ -49,7 +49,7 @@ private lateinit var adapter: FoodRecAdapter
         binding.recFav.adapter = adapter
         dbCategories = FirebaseDatabase.getInstance().getReference("Categories")
         val favourites = FirebaseDatabase.getInstance().getReference("Users")
-            .child(FirebaseAuth.getInstance().currentUser!!.email.toString().replace(".", ""))
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .child("favoriteList")
 
         favourites.addValueEventListener(object : ValueEventListener {

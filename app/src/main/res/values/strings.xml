@@ -30,6 +30,12 @@
     <string name="username">Username</string>
     <string name="search_by_name">Search by name...</string>
     <string name="search_by_ing">Search by ingredient...</string>
+    <string name="categories">Categories</string>
+    <string name="log_out">Log out</string>
+    <string name="change_password">Change password</string>
+    <string name="edit">Edit</string>
+    <string name="change_profile_image">Change Profile Image</string>
+    <string name="save">save</string>
     <string-array name="spinner">
         <item>Name</item>
         <item>Ingredient</item>

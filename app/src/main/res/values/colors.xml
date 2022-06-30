@@ -7,8 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_green">#aed581</color>
-    <color name="primary_green_dark">#7da453</color>
+    <color name="card">#95C67A</color>
+    <color name="primary_green">#759762</color>
+    <color name="primary_green_dark">#759762</color>
     <color name="primary_green_light">#e1ffb1</color>
+    <color name="primary_green_hint">#759762</color>
+    <color name="secondary">#ffcc63</color>
     <color name="gray">#E9EAE7</color>
 </resources>

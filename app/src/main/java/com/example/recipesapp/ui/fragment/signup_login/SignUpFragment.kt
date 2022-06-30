@@ -44,7 +44,7 @@ class SignUpFragment : Fragment() {
                         if (it.isSuccessful) {
 
                             FirebaseDatabase.getInstance().getReference("Users")
-                                .child(email.replace(".", ""))
+                                .child(FirebaseAuth.getInstance().currentUser!!.uid)
                                 .setValue(UserModel(email,password,username))
 
                             val intent = Intent(getActivity(), MainActivity::class.java)
@@ -68,22 +68,26 @@ class SignUpFragment : Fragment() {
     private fun check(): Boolean {
         var rightPassword = true
 
-        if (binding.edtUsername.text.toString().trim() == "") {
-            Toast.makeText(activity, "Please enter username", Toast.LENGTH_SHORT).show()
-            rightPassword = false
-        } else if (binding.edtEmail.text.toString().trim() == "") {
-            Toast.makeText(activity, "Please enter email", Toast.LENGTH_SHORT).show()
-            rightPassword = false
-        } else if (binding.edtPassword.text.toString().trim() == "") {
-            Toast.makeText(activity, "Please enter password", Toast.LENGTH_SHORT).show()
-            rightPassword = false
-        } else if (binding.edtRepeatPassword.text.toString()
-                .trim() != binding.edtPassword.text.toString().trim()
-        ) {
-            binding.edtPassword.text = null
-            binding.edtRepeatPassword.text = null
-            rightPassword = false
-            Toast.makeText(activity, "Passwords don't match", Toast.LENGTH_SHORT).show()
+        when {
+            binding.edtUsername.text.toString().trim() == "" -> {
+                Toast.makeText(activity, "Please enter username", Toast.LENGTH_SHORT).show()
+                rightPassword = false
+            }
+            binding.edtEmail.text.toString().trim() == "" -> {
+                Toast.makeText(activity, "Please enter email", Toast.LENGTH_SHORT).show()
+                rightPassword = false
+            }
+            binding.edtPassword.text.toString().trim() == "" -> {
+                Toast.makeText(activity, "Please enter password", Toast.LENGTH_SHORT).show()
+                rightPassword = false
+            }
+            binding.edtRepeatPassword.text.toString()
+                .trim() != binding.edtPassword.text.toString().trim() -> {
+                binding.edtPassword.text = null
+                binding.edtRepeatPassword.text = null
+                rightPassword = false
+                Toast.makeText(activity, "Passwords don't match", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return rightPassword

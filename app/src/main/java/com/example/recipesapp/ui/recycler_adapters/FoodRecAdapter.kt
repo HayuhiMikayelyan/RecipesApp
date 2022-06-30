@@ -29,7 +29,7 @@ class FoodRecAdapter(private val list: List<FoodModel>) :
 
     override fun onBindViewHolder(holder: RecViewHolder, position: Int) {
         val favorites = FirebaseDatabase.getInstance().getReference("Users")
-            .child(FirebaseAuth.getInstance().currentUser!!.email.toString().replace(".", ""))
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .child("favoriteList")
 
         favorites.addValueEventListener(object : ValueEventListener {
