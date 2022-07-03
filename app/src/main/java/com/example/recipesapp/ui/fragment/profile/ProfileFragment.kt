@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 
 
 class ProfileFragment : Fragment() {
@@ -25,14 +26,27 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val user = FirebaseDatabase.getInstance().getReference("Users")
+        val users = FirebaseDatabase.getInstance().getReference("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
 
-        user.addValueEventListener(object : ValueEventListener {
+        users.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val user = snapshot.getValue(UserModel::class.java)!!
                 binding.tvProfileName.text = user.username
                 binding.tvProfileEmail.text = user.email
+                users.child("imgUrl").addValueEventListener(object : ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if (snapshot.exists()){
+                            val imgUrl = snapshot.getValue(String::class.java)
+                            Picasso.with(requireContext()).load(imgUrl).into(binding.imgProfile)
+                        }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(activity, error.message, Toast.LENGTH_LONG).show()
+                    }
+
+                })
             }
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(activity, error.message, Toast.LENGTH_LONG).show()

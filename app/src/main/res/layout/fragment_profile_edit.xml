@@ -8,7 +8,7 @@
     android:background="@color/primary_green_light">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_profile2"
         android:layout_width="150dp"
         android:layout_height="150dp"
